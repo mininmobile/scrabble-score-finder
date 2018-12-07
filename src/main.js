@@ -37,6 +37,8 @@ document.addEventListener("keydown", (e) => {
 		let letter = document.createElement("div");
 		letter.innerText = e.key;
 
+		letter.addEventListener("click", letter.remove);
+
 		letters.appendChild(letter);
 	}
 
