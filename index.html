@@ -5,21 +5,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="src/main.css">
+	<script src="src/lib/clipboard.min.js"></script>
 	<script defer src="src/main.js"></script>
 	<title>Scrabble Score Finder</title>
 </head>
 <body>
-	<div id="letters" class="letters">
-		<div class="letter d"></div>
-		<div class="letter e"></div>
-		<div class="letter s"></div>
-		<div class="letter p"></div>
-		<div class="letter a"></div>
-		<div class="letter c"></div>
-		<div class="letter i"></div>
-		<div class="letter t"></div>
-		<div class="letter o"></div>
-	</div>
-	<p id="score" class="score">14</p>
+	<div id="letters" class="letters empty"></div>
+	<p id="score" class="score" data-clipboard-text="0">0</p>
 </body>
 </html>

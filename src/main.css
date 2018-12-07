@@ -23,10 +23,17 @@ p, h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 }
 
+/* util */
+
+@keyframes blink {
+	from	{ opacity: 1; }
+	to		{ opacity: 0; }
+}
+
 /* score */
 
 .score {
-	padding: 0.5em 0.65em;
+	padding: 0.5em 0.9em;
 	background: linear-gradient(to bottom, #0043ff, #0082ff);
 	position: relative;
 	top: 0;
@@ -46,6 +53,16 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .letters {
 	margin-bottom: 1em;
+}
+
+.letters.empty::before {
+	content: "type a word to find it's score\A click the score to copy to clipboard";
+	margin-bottom: 0.7em;
+	display: block;
+	font-size: 1.5em;
+	white-space: pre;
+	text-align: center;
+	animation: blink 1s infinite alternate linear;
 }
 
 .letter {

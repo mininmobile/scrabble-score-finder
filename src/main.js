@@ -32,15 +32,22 @@ let dictionary = {
 
 document.addEventListener("keydown", (e) => {
 	if (e.key == "Backspace") {
-		document.querySelector("#letters *:last-child").remove();
-	} else if (e.key.length == 1) {
+		let lastLetter = document.querySelector("#letters :last-child");
+		
+		if (lastLetter) lastLetter.remove();
+	} else if (Object.keys(dictionary).includes(e.key.toLowerCase())) {
 		let letter = document.createElement("div");
-		letter.classList.add("letter", e.key);
+		letter.classList.add("letter", e.key.toLowerCase());
 
 		letter.addEventListener("click", letter.remove);
 
 		letters.appendChild(letter);
 	}
+	
+	if (letters.children.length == 0)
+		letters.classList.add("empty")
+	else
+		letters.classList.remove("empty");
 
 	updateScore();
 });
@@ -48,11 +55,14 @@ document.addEventListener("keydown", (e) => {
 function updateScore() {
 	let result = 0;
 
-	letters.childNodes.forEach((l) => {
-		let letter = l.getAttribute("class").split(" ")[1];
+	[].forEach.call(letters.children, (l) => {
+		let letter = l.classList[1];
 
-		result += dictionary[l.textContent] ? dictionary[l.textContent] : 0;
+		result += dictionary[letter] ? dictionary[letter] : 0;
 	});
 
+	score.setAttribute("data-clipboard-text", result);
 	score.innerText = result;
 }
+
+new ClipboardJS(score);
