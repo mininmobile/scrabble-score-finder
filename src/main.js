@@ -35,7 +35,7 @@ document.addEventListener("keydown", (e) => {
 		document.querySelector("#letters *:last-child").remove();
 	} else if (e.key.length == 1) {
 		let letter = document.createElement("div");
-		letter.innerText = e.key;
+		letter.classList.add("letter", e.key);
 
 		letter.addEventListener("click", letter.remove);
 
@@ -49,6 +49,8 @@ function updateScore() {
 	let result = 0;
 
 	letters.childNodes.forEach((l) => {
+		let letter = l.getAttribute("class").split(" ")[1];
+
 		result += dictionary[l.textContent] ? dictionary[l.textContent] : 0;
 	});
 

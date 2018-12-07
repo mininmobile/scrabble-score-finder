@@ -23,25 +23,121 @@ p, h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 }
 
-.letters div {
-	width: 2em;
-	height: 2em;
+/* score */
+
+.score {
+	padding: 0.5em 0.65em;
+	background: linear-gradient(to bottom, #0043ff, #0082ff);
+	position: relative;
+	top: 0;
+	font-size: 1.6em;
+	cursor: pointer;
+	border-radius: 0.5em;
+	box-shadow: 0 0 1em rgba(255, 255, 255, 0.2) inset;
+	transition: top 0.2s, box-shadow 0.2s;
+}
+
+.score:hover {
+	top: 0.1em;
+	box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.5) inset;
+}
+
+/* letters */
+
+.letters {
+	margin-bottom: 1em;
+}
+
+.letter {
+	width: 2.4em;
+	height: 2.4em;
 	margin: 0 0.2em;
 	background: linear-gradient(to bottom,  #ff2c00, #fa0);
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 1.5em;
+	position: relative;
+	top: 0;
+	font-size: 1.7em;
 	cursor: pointer;
 	border-radius: 0.5em;
 	box-shadow: 0 0 1em rgba(255, 255, 255, 0.2) inset;
-	transition: box-shadow 0.2s;
+	transition: top 0.2s, box-shadow 0.2s;
 }
 
-.letters div:hover { box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.5) inset; }
+.letter:hover {
+	top: 0.1em;
+	box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.5) inset;
+}
 
-.letters div::after {
-	content: "9";
+.letter::before {
+	color: #ddd;
+	position: relative;
+	right: 0;
+	bottom: 7%;
+	font-size: 1.5em;
+}
+
+.letter::after {
 	color: rgba(255, 255, 255, 0.6);
-	position: absolute;
+	position: relative;
+	left: 5%;
+	top: 15%;
+	font-size: 0.7em;
 }
+
+/* letter values and scores */
+
+.letter.a::before { content: "a"; }
+.letter.b::before { content: "b"; }
+.letter.c::before { content: "c"; }
+.letter.d::before { content: "d"; }
+.letter.e::before { content: "e"; }
+.letter.f::before { content: "f"; }
+.letter.g::before { content: "g"; }
+.letter.h::before { content: "h"; }
+.letter.i::before { content: "i"; }
+.letter.j::before { content: "j"; }
+.letter.k::before { content: "k"; }
+.letter.l::before { content: "l"; }
+.letter.m::before { content: "m"; }
+.letter.n::before { content: "n"; }
+.letter.o::before { content: "o"; }
+.letter.p::before { content: "p"; }
+.letter.q::before { content: "q"; }
+.letter.r::before { content: "r"; }
+.letter.s::before { content: "s"; }
+.letter.t::before { content: "t"; }
+.letter.u::before { content: "u"; }
+.letter.v::before { content: "v"; }
+.letter.w::before { content: "w"; }
+.letter.x::before { content: "x"; }
+.letter.y::before { content: "y"; }
+.letter.z::before { content: "z"; }
+
+.letter.a::after { content: "1"; }
+.letter.b::after { content: "3"; }
+.letter.c::after { content: "3"; }
+.letter.d::after { content: "2"; }
+.letter.e::after { content: "1"; }
+.letter.f::after { content: "4"; }
+.letter.g::after { content: "2"; }
+.letter.h::after { content: "4"; }
+.letter.i::after { content: "1"; }
+.letter.j::after { content: "8"; }
+.letter.k::after { content: "5"; }
+.letter.l::after { content: "1"; }
+.letter.m::after { content: "3"; }
+.letter.n::after { content: "1"; }
+.letter.o::after { content: "1"; }
+.letter.p::after { content: "3"; }
+.letter.q::after { content: "10"; }
+.letter.r::after { content: "1"; }
+.letter.s::after { content: "1"; }
+.letter.t::after { content: "1"; }
+.letter.u::after { content: "1"; }
+.letter.v::after { content: "4"; }
+.letter.w::after { content: "4"; }
+.letter.x::after { content: "8"; }
+.letter.y::after { content: "4"; }
+.letter.z::after { content: "10"; }
